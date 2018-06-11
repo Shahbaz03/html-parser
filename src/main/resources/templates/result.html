@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'URL: ' + ${result.url}" />
+    <p th:text="'Title: ' + ${result.pageTitle}" />
+    <p th:text="'Version: ' + ${result.version}" />
+    <p th:text="'Login Page: ' + ${result.loginPage}" />
+    <p th:each="headingLevel : ${result.headingLevels}">
+       <td th:text="${headingLevel.key}">keyvalue</td>
+       <td th:text="${headingLevel.value}">num</td>
+    </p>
+    <p th:each="linkgroup : ${result.groupedHypermediaLinks}">
+       <td th:text="${linkgroup.key}">keyvalue</td>
+       		<li th:each="hypermedia : ${linkgroup.value}">
+       			<td th:text="'Link Type: ' + ${hypermedia.linkType}">keyvalue</td>
+       			<td th:text="'Tag Name: ' + ${hypermedia.tagName}">keyvalue</td>
+       			<td><a th:href="@{${hypermedia.url}}">Link</a></td>
+       		</li>
+    </p>
+    <a href="/">Search another URL</a>
+</body>
+</html>
