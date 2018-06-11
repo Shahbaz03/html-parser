@@ -35,12 +35,15 @@ JSoup
 ### Framework
 Spring Boot with Thymeleaf Templates for Server Side Rendering
 Spring MVC
-
-
-### Default port: 8080 
-### Application url : localhost:8080/
-### Rest Api : localhost:8080/v1/parse (Its a POST Request. U can use any tool like POstman to make the call)
+ 
+### Application url : 
 ```
+localhost:8080/
+```
+### Rest Api : 
+```
+localhost:8080/v1/parse (Its a POST Request. U can use any tool like POstman to make the call)
+
 Sample Request Body : 
 {
 "url" : "https://github.com/login"
